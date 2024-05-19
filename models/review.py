@@ -5,10 +5,7 @@ from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """
-    child class of BaseModel
-    has 3 attributes(empty strings) - place_id, user_id and text
-    """
+    """Class for managing review objects """
 
     place_id = ""
     user_id = ""
