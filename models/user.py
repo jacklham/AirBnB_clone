@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-""" Doc Here """
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """ DOC DOC DOC """
+    """Creates a new user"""
     email = ""
     password = ""
     first_name = ""

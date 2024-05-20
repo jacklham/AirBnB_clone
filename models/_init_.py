@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Doc Here """
+"""update storage"""
 from models.engine.file_storage import FileStorage
 
 storage = FileStorage()
