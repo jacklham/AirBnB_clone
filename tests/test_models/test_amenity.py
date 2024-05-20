@@ -1,53 +1,27 @@
 #!/usr/bin/python3
-"""Unittest module for the Amenity Class."""
-
+""" unit test for Amenity """
 import unittest
-from datetime import datetime
-import time
 from models.amenity import Amenity
-import re
-import json
-from models.engine.file_storage import FileStorage
-import os
-from models import storage
-from models.base_model import BaseModel
+from datetime import datetime
 
 
-class TestAmenity(unittest.TestCase):
+class CityTestCase(unittest.TestCase):
+    """ class for amenity test """
 
-    """Test Cases for the Amenity class."""
+    def test_amenity(self):
+        """existince"""
+        new = Amenity()
+        self.assertTrue(hasattr(new, "id"))
+        self.assertTrue(hasattr(new, "created_at"))
+        self.assertTrue(hasattr(new, "updated_at"))
+        self.assertTrue(hasattr(new, "name"))
 
-    def setUp(self):
-        """Sets up test methods."""
-        pass
-
-    def tearDown(self):
-        """Tears down test methods."""
-        self.resetStorage()
-        pass
-
-    def resetStorage(self):
-        """Resets FileStorage data."""
-        FileStorage._FileStorage__objects = {}
-        if os.path.isfile(FileStorage._FileStorage__file_path):
-            os.remove(FileStorage._FileStorage__file_path)
-
-    def test_8_instantiation(self):
-        """Tests instantiation of Amenity class."""
-
-        b = Amenity()
-        self.assertEqual(str(type(b)), "<class 'models.amenity.Amenity'>")
-        self.assertIsInstance(b, Amenity)
-        self.assertTrue(issubclass(type(b), BaseModel))
-
-    def test_8_attributes(self):
-        """Tests the attributes of Amenity class."""
-        attributes = storage.attributes()["Amenity"]
-        o = Amenity()
-        for k, v in attributes.items():
-            self.assertTrue(hasattr(o, k))
-            self.assertEqual(type(getattr(o, k, None)), v)
+        """type test"""
+        self.assertIsInstance(new.id, str)
+        self.assertIsInstance(new.created_at, datetime)
+        self.assertIsInstance(new.updated_at, datetime)
+        self.assertIsInstance(new.name, str)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

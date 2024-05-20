@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Defines the user class"""
-
+""" Doc Here """
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """Class for managing user objects"""
-
+    """ DOC DOC DOC """
     email = ""
     password = ""
     first_name = ""

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" initializes the  models """
-
+""" Doc Here """
 from models.engine.file_storage import FileStorage
 
 storage = FileStorage()

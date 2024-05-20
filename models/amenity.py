@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-"""Defines the amenity class"""
-
+""" Doc Here """
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """
-    child class of BaseModel
-    has one attribute - name(empty string)
-    """
+    """ DOC DOC DOC """
     name = ""
